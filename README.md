@@ -5,6 +5,7 @@
 c предустановленными glew, glfm
 
 <img width="1598" height="1205" alt="image" src="https://github.com/user-attachments/assets/a0f67b98-86ad-4f49-9cab-8a322f85c859" />
+<img width="1601" height="1204" alt="image" src="https://github.com/user-attachments/assets/8e5434aa-d7e1-4998-8885-4dec8ce24d39" />
 
 
 
