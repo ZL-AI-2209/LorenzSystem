@@ -1,4 +1,6 @@
 Модулирование аттрактора системы Лоренца с движением камеры (стрелки - по окружности, a w s d - относительно центра) 
 с редактурой начального положения pos и параметров sigma, r, b
-<img width="625" height="559" alt="image" src="https://github.com/user-attachments/assets/9f50234c-4146-4624-80a6-fca3555abe67" />
-<img width="543" height="497" alt="image" src="https://github.com/user-attachments/assets/47adad67-f45c-4203-96f8-be0a463186ab" />
+a<img width="797" height="607" alt="image" src="https://github.com/user-attachments/assets/75ab515e-6a7a-4fec-99bd-0848244c3ee4" />
+<img width="794" height="619" alt="image" src="https://github.com/user-attachments/assets/bf65b427-a481-463b-84cd-4e3ea08c4669" />
+<img width="801" height="594" alt="image" src="https://github.com/user-attachments/assets/c1717922-4233-4d66-bf2e-bbb56be46134" />
+
