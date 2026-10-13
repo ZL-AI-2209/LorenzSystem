@@ -85,7 +85,7 @@ int main() {
         return -1;
     }
     
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Lorenz Attractor - Free Camera", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(1600, 1200, "Lorenz Attractor - Free Camera", NULL, NULL);
     if (!window) {
         glfwTerminate();
         return -1;
@@ -101,14 +101,16 @@ int main() {
     const char* vertexShaderSource = R"(
         #version 330 core
         layout (location = 0) in vec3 aPos;
+    
         uniform mat4 model;
         uniform mat4 view;
         uniform mat4 projection;
+    
         void main() {
             gl_Position = projection * view * model * vec4(aPos, 1.0);
+            gl_PointSize = 8.0; 
         }
     )";
-
     const char* fragmentShaderSource = R"(
         #version 330 core
         out vec4 FragColor;
@@ -155,8 +157,10 @@ int main() {
     
     glm::vec3 target = glm::vec3(0.0f, 0.0f, 25.0f); 
 
-    glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); 
     glEnable(GL_DEPTH_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE); 
 
     while (!glfwWindowShouldClose(window)) {
         double newTime = glfwGetTime();
@@ -179,9 +183,9 @@ int main() {
         if (pitch < minPitch) pitch = minPitch;
 
         if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) radius -= moveSpeed;
-        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) radius += moveSpeed;
-        if (radius < 5.0f) radius = 5.0f;
-        if (radius > 150.0f) radius = 150.0f;
+        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) radius += moveSpeed;  
+        if (radius < 0.5f) radius = 0.5f;
+        if (radius > 300.0f) radius = 300.0f;
 
         float x = radius * glm::cos(pitch) * glm::sin(yaw);
         float y = radius * glm::sin(pitch);
@@ -238,7 +242,7 @@ int main() {
 
         glBindVertexArray(VAO);
         glLineWidth(2.0f);
-        glDrawArrays(GL_LINE_STRIP, 0, current_point_count);
+        glDrawArrays(GL_POINTS, 0, current_point_count);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
